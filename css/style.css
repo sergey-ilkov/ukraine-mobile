@@ -153,6 +153,23 @@ body.fixed {
 .preload-logo {
     will-change: width;
 }
+.header__logo,
+.header-menu__item,
+.hero__title,
+.hero__description,
+.hero__link-btn,
+.hero__item-image,
+.donate__item-image,
+.donate__title,
+.donate-form {
+    opacity: 0;
+}
+
+@media (max-width: 650px) {
+    .header-menu__item {
+        opacity: 1;
+    }
+}
 .container {
     max-width: 1240px;
     padding: 0 20px;
