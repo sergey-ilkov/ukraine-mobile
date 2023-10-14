@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ukraine Mobile</title>
+    <link rel="icon" type="image/png" sizes="228x228" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body.fixed {
+            overflow: hidden;
+        }
+
+        .preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 100;
+            background: #fff;
+        }
+
+        .wave {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+        }
+
+        .preload-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 85px;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        .preload-logo svg {
+            display: block;
+            width: 195px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="preloader">
+        <svg class="wave" viewBox="0 0 100 100" preserveAspectRatio="none" fill="#030f1a">
+            <path id="wave" d="M 0 100 V 100 Q 50 100 100 100 V 100 z" />
+        </svg>
+        <div class="preload-logo">
+            <img src="images/logo.png" alt="logo">
+            <svg viewBox="0 0 145 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M5.6435 18.264C4.0435 18.264 2.7795 17.776 1.8515 16.8C0.9395 15.824 0.4835 14.456 0.4835 12.696V1.2H3.5315V12.696C3.5315 14.504 4.2355 15.408 5.6435 15.408C7.0515 15.408 7.7555 14.504 7.7555 12.696V1.2H10.8275V12.696C10.8275 14.456 10.3635 15.824 9.4355 16.8C8.5235 17.776 7.2595 18.264 5.6435 18.264ZM21.1496 18L17.6216 11.16L16.5896 12.768V18H13.6856V1.2H16.5896V8.088L17.5736 6.12L20.3816 1.2H23.7896L19.2776 8.52L24.5096 18H21.1496ZM33.2159 18L30.2159 12.144H28.8719V18H25.9199V1.2H30.5279C32.1759 1.2 33.4479 1.68 34.3439 2.64C35.2559 3.584 35.7119 4.912 35.7119 6.624C35.7119 9.104 34.8319 10.768 33.0719 11.616L36.4559 18H33.2159ZM28.8719 4.008V9.336H30.5039C31.9599 9.336 32.6879 8.44 32.6879 6.648C32.6879 4.888 31.9599 4.008 30.5039 4.008H28.8719ZM45.1829 18L44.5109 14.952H40.5749L39.9029 18H36.8309L40.9589 1.2H44.1269L48.2549 18H45.1829ZM41.1749 12.144H43.9109L43.2389 9.024C43.1109 8.384 42.8869 7.008 42.5669 4.896H42.4949C42.2709 6.64 42.0549 8.016 41.8469 9.024L41.1749 12.144ZM49.9434 1.2H52.8954V18H49.9434V1.2ZM63.4771 1.2H66.3811V18H63.4531L60.2131 10.704C59.2691 8.256 58.7491 6.888 58.6531 6.6L58.5811 6.672C58.8211 8.784 58.9411 10.952 58.9411 13.176V18H56.0371V1.2H58.9651L62.4691 9.096C62.6291 9.496 62.8611 10.104 63.1651 10.92C63.4851 11.72 63.7011 12.256 63.8131 12.528L63.8851 12.456C63.6131 10.312 63.4771 8.264 63.4771 6.312V1.2ZM72.5126 15.216H78.2486V18H69.5606V1.2H78.0086V3.984H72.5126V8.136H77.5526V10.824H72.5126V15.216Z"
+                    fill="#4AD2E5" />
+                <path
+                    d="M91.4208 1.2H93.4608V18H91.5168V10.296C91.5488 8.376 91.6048 6.68 91.6848 5.208L91.5888 5.184C91.4128 5.68 91.1088 6.48 90.6768 7.584C90.2608 8.688 90.0048 9.36 89.9088 9.6L88.1568 14.136H86.2128L84.4368 9.6C84.2768 9.168 83.9968 8.44 83.5968 7.416C83.2128 6.392 82.9408 5.648 82.7808 5.184L82.6608 5.208C82.7728 7.112 82.8288 8.808 82.8288 10.296V18H80.8848V1.2H82.9488L85.8528 8.232C86.3808 9.528 86.8048 10.704 87.1248 11.76H87.2208C87.6368 10.528 88.0688 9.352 88.5168 8.232L91.4208 1.2ZM105.17 16.824C104.29 17.816 103.074 18.312 101.522 18.312C99.9704 18.312 98.7464 17.816 97.8504 16.824C96.9704 15.816 96.5304 14.448 96.5304 12.72V6.456C96.5304 4.728 96.9704 3.368 97.8504 2.376C98.7464 1.384 99.9704 0.887999 101.522 0.887999C103.074 0.887999 104.29 1.384 105.17 2.376C106.05 3.368 106.49 4.728 106.49 6.456V12.72C106.49 14.448 106.05 15.816 105.17 16.824ZM101.522 16.392C102.482 16.392 103.21 16.08 103.706 15.456C104.218 14.816 104.474 13.904 104.474 12.72V6.456C104.474 5.288 104.218 4.392 103.706 3.768C103.21 3.128 102.482 2.808 101.522 2.808C100.546 2.808 99.8024 3.128 99.2904 3.768C98.7944 4.392 98.5464 5.288 98.5464 6.456V12.72C98.5464 13.904 98.7944 14.816 99.2904 15.456C99.8024 16.08 100.546 16.392 101.522 16.392ZM116.389 9.336C117.189 9.592 117.813 10.064 118.261 10.752C118.709 11.44 118.933 12.288 118.933 13.296C118.933 14.784 118.501 15.944 117.637 16.776C116.789 17.592 115.621 18 114.133 18H109.549V1.2H113.821C115.213 1.2 116.301 1.6 117.085 2.4C117.885 3.184 118.285 4.272 118.285 5.664C118.285 6.56 118.117 7.328 117.781 7.968C117.445 8.608 116.981 9.064 116.389 9.336ZM113.677 3.048H111.517V8.496H113.725C115.421 8.496 116.269 7.568 116.269 5.712C116.269 3.936 115.405 3.048 113.677 3.048ZM113.965 16.152C115.949 16.152 116.941 15.2 116.941 13.296C116.941 12.336 116.661 11.608 116.101 11.112C115.541 10.6 114.773 10.344 113.797 10.344H111.517V16.152H113.965ZM121.315 1.2H123.283V18H121.315V1.2ZM128.767 16.128H134.623V18H126.799V1.2H128.767V16.128ZM138.54 16.152H144.876V18H136.572V1.2H144.612V3.024H138.54V8.568H144.18V10.368H138.54V16.152Z"
+                    fill="#F5DC16" />
+            </svg>
+        </div>
+    </div>
+    <div class="wrapper page-home">
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <button class="burger-menu"></button>
+                    <div class="header__logo"><img src="images/logo.png" alt="logo"></div>
+                    <nav class="nav-menu">
+                        <ul class="header-menu">
+                            <li class="header-menu__item active"><a class="header-menu__item-link link" href="index.html">Головна</a></li>
+                            <li class="header-menu__item"><a class="header-menu__item-link link" href="#">Форум</a></li>
+                            <li class="header-menu__item"><a class="header-menu__item-link link" href="donate.html">Донат</a></li>
+                            <li class="header-menu__item"><a class="header-menu__item-link link" href="#">Грати з комп’ютера</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <section class="hero">
+                <div class="container">
+                    <div class="hero__items">
+                        <div class="hero__item hero__item-content">
+                            <h1 class="hero__title title-h1">
+                                ГРАЙ У РЕАЛЬНЕ ЖИТТЯ В GTA ЗІ СВОГО ТЕЛЕФОНУ НА <span class="text-grd-blue">Ukraine MOBILE</span>
+                            </h1>
+                            <p class="hero__description description">
+                                Круті тачки та персонажі з реального світу, унікальний ігровий мод та багато іншого вже чекає на тебе,
+                                приєднуйся до нас вже зараз!
+                            </p>
+                            <a class="hero__link-btn btn btn-start" href="#">
+                                <span class="icon-btn"></span><span>ПОЧАТИ ГРУ</span>
+                            </a>
+                        </div>
+                        <div class="hero__item hero__item-image">
+                            <img class="hero__img" src="images/home/hero.webp" alt="people">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="social">
+                <div class="container">
+                    <div class="social__inner">
+                        <div class="social__items">
+                            <div class="social__item social__item-image">
+                                <img class="social__img" src="images/home/social-btn.webp" alt="image-buttons">
+                            </div>
+                            <div class="social__item social__item-content">
+                                <h2 class="socail__title title-h2">Приєднуйся <span class="text-grd-orange">до нас</span></h2>
+                                <p class="socail__description description">
+                                    Стеж за всіма нашими новинами та анонсами у наших соціальних мережах Instagram та Telegram
+                                </p>
+                                <div class="social__links">
+                                    <a class="social__link-btn btn btn-instagram" href="#">
+                                        <span class="icon-btn"></span><span>Instagram</span>
+                                    </a>
+                                    <a class="social__link-btn btn btn-telegram" href="#">
+                                        <span class="icon-btn"></span><span>Telegram</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="start-game">
+                <div class="container">
+                    <div class="start-game__inner">
+                        <h2 class="start-game__title title-h2"> <span class="text-grd-orange">Чому</span> варто грати у нас?</h2>
+                        <p class="start-game__subtitle subtitle">Унікальні системи нашого проекту</p>
+                        <div class="start-game__items">
+                            <div class="start-game__item start-game__item-1">
+                                <img class="start-game__img" src="images/home/start-game-1.webp" alt="image-car">
+                            </div>
+                            <div class="start-game__item start-game__item-2">
+                                <img class="start-game__img" src="images/home/start-game-2.webp" alt="image-people">
+
+                            </div>
+                            <div class="start-game__item start-game__item-3">
+                                <img class="start-game__img" src="images/home/start-game-3.webp" alt="image-of-gear">
+                            </div>
+                        </div>
+                        <div class="start-game__bottom">
+                            <p class="start-game__bottom-text text">
+                                Чого ж ти чекаєш? Швидше натискай
+                            </p>
+                            <a class="start-game__link-btn btn btn-start" href="#">
+                                <span class="icon-btn"></span><span>ПОЧАТИ ГРУ</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__logo"><img class="footer__logo-img" src="images/footer-logo.png" alt="logo"></div>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <p class="footer__item-copyright text-min">© 2023 UKRAINE MOBILE</p>
+                        </li>
+                        <li class="footer__item"><a class="footer__item-link link text-min" href="#">Умови використання</a></li>
+                        <li class="footer__item"><a class="footer__item-link link text-min" href="#"> Політика конфіденційності</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

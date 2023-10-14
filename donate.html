@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate | Ukraine Mobile</title>
+    <link rel="icon" type="image/png" sizes="228x228" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+        body.fixed {
+            overflow: hidden;
+        }
+
+        .preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 100;
+
+            background: #030f1a;
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="preloader"></div>
+
+    <div class="wrapper page-donate">
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <button class="burger-menu"></button>
+                    <div class="header__logo"><img src="images/logo.png" alt="logo"></div>
+                    <nav class="nav-menu">
+                        <ul class="header-menu">
+                            <li class="header-menu__item"><a class="header-menu__item-link link" href="index.html">Головна</a></li>
+                            <li class="header-menu__item"><a class="header-menu__item-link link" href="#">Форум</a></li>
+                            <li class="header-menu__item active"><a class="header-menu__item-link link" href="donate.html">Донат</a></li>
+                            <li class="header-menu__item"><a class="header-menu__item-link link" href="#">Грати з комп’ютера</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <section class="donate">
+            <div class="container">
+                <div class="donate__items">
+                    <div class="donate__item donate__item-form">
+                        <h1 class="donate__title title-h1"> <span class="text-grd-blue">донат</span> ukraine mobile</h1>
+                        <form class="donate-form" action="donate">
+                            <div class="donate-form__group donate-form__group-nikname">
+                                <label class="donate-form__label" for="nikname">Нікнейм</label>
+                                <input id="nikname" class="donate-form__input donate-form__input-nikname" type="text"
+                                    placeholder="Введіть Ваш ігровий нік" name="nikname" required>
+                            </div>
+                            <div class="donate-form__group donate-form__group-server">
+                                <label class="donate-form__label" for="server">Сервер</label>
+                                <select id="server" class="donate-form__select-server" name="server" required>
+                                    <option class="option-default" value="">Оберіть ігровий сервер</option>
+                                    <option value="server-1">server-1</option>
+                                    <option value="server-2">server-2</option>
+                                    <option value="server-3">server-3</option>
+                                    <option value="server-4">server-4</option>
+                                    <option value="server-5">server-5</option>
+                                </select>
+                            </div>
+                            <div class="donate-form__group donate-form__group-donate">
+                                <label class="donate-form__label" for="donate">Сума</label>
+                                <input id="donate" class="donate-form__input donate-form__input-donate" type="number"
+                                    placeholder="Сума донату" name="donate" min="1" required>
+                            </div>
+                            <div class="donate-form__group donate-form__group-checket">
+                                <input id="agreement" class="donate-form__input donate-form__input-checket" type="checkbox" name="agreement"
+                                    checked required>
+                                <label class="donate-form__label donate-form__label-checket" for="agreement">
+                                    Згоден з угодою користувача
+                                </label>
+                            </div>
+                            <button type="submit" class="donate-form__btn btn btn-pay">
+                                <span class="icon-btn"></span><span>Сплатити</span>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="donate__item donate__item-image">
+                        <picture>
+                            <source media="(min-width:801px)" srcset="images/donate/donate.webp">
+                            <img class="donate__img" src="images/donate/donate-min.webp" alt="Flowers" style="width:auto;">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__logo"><img class="footer__logo-img" src="images/footer-logo.png" alt="logo"></div>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <p class="footer__item-copyright text-min">© 2023 UKRAINE MOBILE</p>
+                        </li>
+                        <li class="footer__item"><a class="footer__item-link link text-min" href="#">Умови використання</a></li>
+                        <li class="footer__item"><a class="footer__item-link link text-min" href="#"> Політика конфіденційності</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="js/gsap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
